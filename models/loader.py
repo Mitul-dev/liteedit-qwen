@@ -12,7 +12,7 @@ Usage:
 import yaml
 import torch
 from transformers import (
-    Qwen2VLForConditionalGeneration,
+    Qwen2_5_VLForConditionalGeneration,
     AutoProcessor,
     BitsAndBytesConfig,
 )
@@ -77,7 +77,7 @@ def load_model(config_path: str):
     if quant_config is not None:
         model_kwargs["quantization_config"] = quant_config
 
-    model = Qwen2VLForConditionalGeneration.from_pretrained(model_id, **model_kwargs)
+    model = Qwen2_5_VLForConditionalGeneration.from_pretrained(model_id, **model_kwargs)
 
     # Attach LoRA adapter if specified
     if lora_path and os.path.exists(lora_path):
@@ -96,3 +96,4 @@ def load_model(config_path: str):
 
     model.eval()
     return model, processor, config
+
