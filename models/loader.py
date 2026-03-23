@@ -77,7 +77,11 @@ def load_model(config_path: str):
     if quant_config is not None:
         model_kwargs["quantization_config"] = quant_config
 
-    model = Qwen2_5_VLForConditionalGeneration.from_pretrained(model_id, **model_kwargs)
+model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
+    model_id,
+    ignore_mismatched_sizes=True,
+    **model_kwargs
+)
 
     # Attach LoRA adapter if specified
     if lora_path and os.path.exists(lora_path):
