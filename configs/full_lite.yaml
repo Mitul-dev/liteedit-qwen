@@ -1,0 +1,11 @@
+model_id: "Qwen/Qwen2.5-VL-7B-Instruct"
+quantization: "int4"      # all techniques combined
+lora_path: null           # set per-task at runtime
+num_steps: 10
+image_size: 512
+device_map: "auto"
+dtype: "float16"
+max_new_tokens: 1024
+mask_attention: true
+scheduler: "dpm++"
+# This is your "full LiteEdit-Qwen" config — all ablations enabled together

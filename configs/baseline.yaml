@@ -1,0 +1,9 @@
+model_id: "Qwen/Qwen2.5-VL-7B-Instruct"
+quantization: null        # null | "int4" | "int8"
+lora_path: null           # path to adapter weights or null
+num_steps: 50
+image_size: 512           # resize inputs to this (width and height)
+device_map: "auto"
+dtype: "float16"          # float16 | bfloat16
+max_new_tokens: 1024
+mask_attention: false     # enable mask-guided attention gating

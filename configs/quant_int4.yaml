@@ -1,0 +1,9 @@
+model_id: "Qwen/Qwen2.5-VL-7B-Instruct"
+quantization: "int4"      # INT4 via bitsandbytes — isolates quantization effect
+lora_path: null
+num_steps: 50
+image_size: 512
+device_map: "auto"
+dtype: "float16"
+max_new_tokens: 1024
+mask_attention: false

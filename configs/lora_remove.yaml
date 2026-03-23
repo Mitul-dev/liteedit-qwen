@@ -1,0 +1,10 @@
+model_id: "Qwen/Qwen2.5-VL-7B-Instruct"
+quantization: "int4"
+lora_path: "results/lora_checkpoints/person_remove_adapter"
+num_steps: 50
+image_size: 512
+device_map: "auto"
+dtype: "float16"
+max_new_tokens: 1024
+mask_attention: true      # mask gating helps inpainting precision
+task: "person_remove"
